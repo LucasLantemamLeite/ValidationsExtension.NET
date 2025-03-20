@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lucas Lantemam Leite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+40c58f9b20c40db6d88eb931071c98839b878237")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+8ade63e67db47b8c26c55169f9af0278529b8ae1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ValidationToModelViewNuGet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ValidationToModelViewNuGet")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/LucasLantemamLeite/.NETValidationError.git")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

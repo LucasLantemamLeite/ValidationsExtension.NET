@@ -15,7 +15,7 @@
   <!-- Configurações para o pacote NuGet -->
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="/" /> <!-- Se você tiver um arquivo README -->
-    <None Include="LICENSE" Pack="true" PackagePath="/" /> <!-- Se você tiver um arquivo de licença -->
+    <None Include="License.txt" Pack="true" PackagePath="/" /> <!-- Se você tiver um arquivo de licença -->
   </ItemGroup>
 
 </Project>
