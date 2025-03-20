@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ValidationToModelViewNuGet</name>
+    </assembly>
+    <members>
+        <member name="T:Validation.ExceptonExtension.BirthDateValidationException">
+            <summary>
+            Uma classe usada para validar datas que são maior que a data atual.
+            </summary>
+        </member>
+        <member name="M:Validation.ExceptonExtension.BirthDateValidationException.#ctor(System.String)">
+            <summary>
+            Uma nova instancia da classe <see cref="T:Validation.ExceptonExtension.BirthDateValidationException"/>
+            </summary>
+            <param name="message">A mensagem de erro que será utilizada</param>
+        </member>
+        <member name="M:Validation.ExceptonExtension.BirthDateValidationException.ValidationThrow(System.Nullable{System.DateTime})">
+            <summary>
+            Uma função que verifica se a data recebida é menor que a data atual.
+            Case contrário, lança a Exception <see cref="T:Validation.ExceptonExtension.BirthDateValidationException"/>
+            </summary>
+            <param name="birth_date">Um DateTime que será usado para vereficação</param>
+            <exception cref="T:Validation.ExceptonExtension.BirthDateValidationException">Se a data for maior que a atual ou ser null</exception>
+        </member>
+        <member name="T:Validation.ExceptonExtension.CPFValidationException">
+            <summary>
+            Uma classe usada para validar CPF
+            </summary>
+        </member>
+        <member name="M:Validation.ExceptonExtension.CPFValidationException.#ctor(System.String)">
+            <summary>
+              Uma nova instancia da classe <see cref="T:Validation.ExceptonExtension.CPFValidationException"/>
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Validation.ExceptonExtension.CPFValidationException.ValidationThrow(System.String)">
+            <summary>
+            Uma função que verifica se o cpf recebido possui 11 caracteres e faz o calculo do digito vereficador.
+            Case contrário, lança a Exception <see cref="T:Validation.ExceptonExtension.CPFValidationException"/>
+            </summary>
+            <param name="cpf">O CPF do usuário</param>
+            <exception cref="T:Validation.ExceptonExtension.CPFValidationException">Se o CPF não é igual a 11 ou digito vereficador errado</exception>
+        </member>
+        <member name="T:Validation.ExceptonExtension.EmailAddresDomainException">
+            <summary>
+            Uma classe usada para validar e-mails contendo um '@' um 'dominio' possuindo ou não um orgão (ex: ".br")
+            </summary>
+        </member>
+        <member name="M:Validation.ExceptonExtension.EmailAddresDomainException.#ctor(System.String)">
+            <summary>
+            Inicializa uma nova instancia da classe <see cref="T:Validation.ExceptonExtension.EmailAddresDomainException"/>    
+            </summary>
+            <param name="message">A mensagem de erro que será utilizada</param>
+        </member>
+        <member name="M:Validation.ExceptonExtension.EmailAddresDomainException.ValidationThrow(System.String)">
+            <summary>
+            Válida se um e-mail é válido.
+            Caso contrário, lança a Excepton <see cref="T:Validation.ExceptonExtension.EmailAddresDomainException"/>
+            </summary>
+            <param name="email">O e-mail que será validado</param>
+            <exception cref="T:Validation.ExceptonExtension.EmailAddresDomainException">Se o email não é válido</exception>
+        </member>
+    </members>
+</doc>
