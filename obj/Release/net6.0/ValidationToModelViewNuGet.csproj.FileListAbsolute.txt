@@ -1,13 +1,14 @@
 B:\GitHub\C#\ValidationToModelViewNuGet\bin\Release\net6.0\ValidationToModelViewNuGet.deps.json
 B:\GitHub\C#\ValidationToModelViewNuGet\bin\Release\net6.0\ValidationToModelViewNuGet.dll
 B:\GitHub\C#\ValidationToModelViewNuGet\bin\Release\net6.0\ValidationToModelViewNuGet.pdb
+B:\GitHub\C#\ValidationToModelViewNuGet\bin\Release\net6.0\ValidationToModelViewNuGet.xml
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.GeneratedMSBuildEditorConfig.editorconfig
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.AssemblyInfoInputs.cache
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.AssemblyInfo.cs
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.csproj.CoreCompileInputs.cache
+B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.sourcelink.json
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.dll
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\refint\ValidationToModelViewNuGet.dll
+B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.xml
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.pdb
 B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ref\ValidationToModelViewNuGet.dll
-B:\GitHub\C#\ValidationToModelViewNuGet\bin\Release\net6.0\ValidationToModelViewNuGet.xml
-B:\GitHub\C#\ValidationToModelViewNuGet\obj\Release\net6.0\ValidationToModelViewNuGet.xml

@@ -11,10 +11,10 @@
     "C:\\Users\\Lucas\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "0.0.14",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "B:\\GitHub\\C#\\ValidationToModelViewNuGet\\ValidationToModelViewNuGet.csproj",
-      "projectName": "ValidationExtension.NET",
+      "projectName": "ValidationsExtension.NET",
       "projectPath": "B:\\GitHub\\C#\\ValidationToModelViewNuGet\\ValidationToModelViewNuGet.csproj",
       "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
       "outputPath": "B:\\GitHub\\C#\\ValidationToModelViewNuGet\\obj\\",

@@ -3,19 +3,19 @@
   <PropertyGroup>
     <!-- Nome do seu pacote NuGet -->
     <TargetFramework>net6.0</TargetFramework> <!-- Escolha a versão do .NET que você está utilizando -->
-    <PackageId>ValidationExtension.NET</PackageId> <!-- ID do seu pacote -->
-    <Version>0.0.14</Version> <!-- Versão do seu pacote -->
+    <PackageId>ValidationsExtension.NET</PackageId> <!-- ID do seu pacote -->
+    <Version>1.0.2</Version> <!-- Versão do seu pacote -->
     <Authors>Lucas Lantemam Leite</Authors> <!-- Autor(es) do pacote -->
     <PackageDescription>Validações personalizadas para Fluent API e Exceptions</PackageDescription> <!-- Descrição do pacote -->
-    <PackageTags>email, validation, exception</PackageTags> <!-- Tags para seu pacote, facilitam a busca -->
+    <PackageTags>validation, exception, modelview</PackageTags> <!-- Tags para seu pacote, facilitam a busca -->
     <RepositoryUrl>https://github.com/LucasLantemamLeite/.NETValidationError.git</RepositoryUrl> <!-- URL do repositório, se houver -->
     <GenerateDocumentationFile>true</GenerateDocumentationFile>  <!-- Gera a documentação para comentários do código -->
   </PropertyGroup>
 
   <!-- Configurações para o pacote NuGet -->
   <ItemGroup>
-    <None Include="README.md" Pack="false" PackagePath="/" /> <!-- Se você tiver um arquivo README -->
-    <None Include="LICENSE" Pack="false" PackagePath="/" /> <!-- Se você tiver um arquivo de licença -->
+    <None Include="README.md" Pack="true" PackagePath="/" /> <!-- Se você tiver um arquivo README -->
+    <None Include="LICENSE" Pack="true" PackagePath="/" /> <!-- Se você tiver um arquivo de licença -->
   </ItemGroup>
 
 </Project>
