@@ -4,11 +4,19 @@
     <!-- Nome do seu pacote NuGet -->
     <TargetFramework>net6.0</TargetFramework> <!-- Escolha a versão do .NET que você está utilizando -->
     <PackageId>ValidationsExtension.NET</PackageId> <!-- ID do seu pacote -->
+<<<<<<< HEAD
     <Version>1.1.0</Version> <!-- Versão do seu pacote -->
     <Authors>Lucas Lantemam Leite</Authors> <!-- Autor(es) do pacote -->
     <PackageDescription>Validações personalizadas para Fluent API e Exceptions</PackageDescription> <!-- Descrição do pacote -->
     <PackageTags>validation, exception, modelview</PackageTags> <!-- Tags para seu pacote, facilitam a busca -->
     <RepositoryUrl>https://github.com/LucasLantemamLeite/ValidationsExtension.NET.git</RepositoryUrl> <!-- URL do repositório, se houver -->
+=======
+    <Version>1.0.2</Version> <!-- Versão do seu pacote -->
+    <Authors>Lucas Lantemam Leite</Authors> <!-- Autor(es) do pacote -->
+    <PackageDescription>Validações personalizadas para Fluent API e Exceptions</PackageDescription> <!-- Descrição do pacote -->
+    <PackageTags>validation, exception, modelview</PackageTags> <!-- Tags para seu pacote, facilitam a busca -->
+    <RepositoryUrl>https://github.com/LucasLantemamLeite/.NETValidationError.git</RepositoryUrl> <!-- URL do repositório, se houver -->
+>>>>>>> ed8f7428c6b7d5a9ff782ae8385746f1b617694a
     <GenerateDocumentationFile>true</GenerateDocumentationFile>  <!-- Gera a documentação para comentários do código -->
   </PropertyGroup>
 
