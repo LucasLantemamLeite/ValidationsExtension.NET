@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k+AIVjjlvhE=",
+  "dgSpecHash": "LcpVXDPMBRs=",
   "success": true,
-  "projectFilePath": "B:\\GitHub\\C#\\ValidationToModelViewNuGet\\ValidationToModelViewNuGet.csproj",
+  "projectFilePath": "B:\\GitHub\\C#\\ValidationsExtension.NET\\ValidationToModelViewNuGet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",

@@ -11,13 +11,13 @@
     "C:\\Users\\Lucas\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.2",
+    "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "B:\\GitHub\\C#\\ValidationToModelViewNuGet\\ValidationToModelViewNuGet.csproj",
+      "projectUniqueName": "B:\\GitHub\\C#\\ValidationsExtension.NET\\ValidationToModelViewNuGet.csproj",
       "projectName": "ValidationsExtension.NET",
-      "projectPath": "B:\\GitHub\\C#\\ValidationToModelViewNuGet\\ValidationToModelViewNuGet.csproj",
+      "projectPath": "B:\\GitHub\\C#\\ValidationsExtension.NET\\ValidationToModelViewNuGet.csproj",
       "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-      "outputPath": "B:\\GitHub\\C#\\ValidationToModelViewNuGet\\obj\\",
+      "outputPath": "B:\\GitHub\\C#\\ValidationsExtension.NET\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
