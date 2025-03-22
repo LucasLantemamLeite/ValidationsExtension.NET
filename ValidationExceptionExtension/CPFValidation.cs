@@ -5,22 +5,22 @@ using System.Linq;
 namespace Validation.ExceptonExtension;
 
 /// <summary>
-/// Uma classe usada para validar CPF
+/// A class used to validate CPF
 /// </summary>
 public class CPFValidationException : Exception
 {
     /// <summary>
-    ///   Uma nova instancia da classe <see cref="CPFValidationException"/>
+    ///   A new instance of the <see cref="CPFValidationException"/> class
     /// </summary>
     /// <param name="message"></param>
     public CPFValidationException(string message) : base(message) { }
 
     /// <summary>
-    /// Uma função que verifica se o cpf recebido possui 11 caracteres e faz o calculo do digito vereficador.
-    /// Case contrário, lança a Exception <see cref="CPFValidationException"/>
+    /// A function that checks if the received CPF has 11 characters and performs the verification digit calculation.
+    /// Otherwise, it throws the <see cref="CPFValidationException"/>
     /// </summary>
-    /// <param name="cpf">O CPF do usuário</param>
-    /// <exception cref="CPFValidationException">Se o CPF não é igual a 11 ou digito vereficador errado</exception>
+    /// <param name="cpf">The user's CPF</param>
+    /// <exception cref="CPFValidationException">If the CPF is not equal to 11 characters or the verification digit is incorrect</exception>
     public static void ValidationThrow(string cpf)
     {
         var cpfFormat = cpf.Replace(".", "").Replace("-", "");
@@ -40,14 +40,7 @@ public class CPFValidationException : Exception
             iDigits++;
         }
 
-        if (soma % 11 == 0 || soma % 11 == 1)
-        {
-            digitsChar[9] = '0';
-        }
-        else
-        {
-            digitsChar[9] = (char)(11 - soma % 11 + '0');
-        }
+        digitsChar[9] = (soma % 11 == 0 || soma % 11 == 1) ? '0' : (char)(11 - (soma % 11) + '0');
 
         soma = 0;
         iDigits = 0;
@@ -56,17 +49,9 @@ public class CPFValidationException : Exception
         {
             soma += (int)Char.GetNumericValue(digitsChar[iDigits]) * i;
             iDigits++;
-
         }
 
-        if (soma % 11 == 0 || soma % 11 == 1)
-        {
-            digitsChar[10] = '0';
-        }
-        else
-        {
-            digitsChar[10] = (char)(11 - soma % 11 + '0');
-        }
+        digitsChar[10] = (soma % 11 == 0 || soma % 11 == 1) ? '0' : (char)(11 - (soma % 11) + '0');
 
         if (string.Join("", digitsChar) != cpfFormat)
             throw new CPFValidationException($"Error, in the CPF: '{cpf}'. The verification digit is incorrect");

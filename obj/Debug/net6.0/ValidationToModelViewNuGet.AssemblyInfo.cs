@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lucas Lantemam Leite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+744c0b65ff9acba47822f2e31fa84bba21f050af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.2+ed8f7428c6b7d5a9ff782ae8385746f1b617694a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ValidationToModelViewNuGet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ValidationToModelViewNuGet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2.0")]

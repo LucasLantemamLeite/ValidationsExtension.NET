@@ -3,11 +3,16 @@ using System.Text.RegularExpressions;
 
 namespace Validation.ViewModel;
 
+/// <summary>
+/// A class used to validate if the email address is in a valid format.
+/// </summary>
 public class EmailAddresDomain : ValidationAttribute
 {
+    /// <summary>
+    /// Validates if the provided email is in a valid format.
+    /// </summary>
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-
         if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
             return new ValidationResult(ErrorMessage ?? "Email Cannot be null");
 
@@ -18,6 +23,6 @@ public class EmailAddresDomain : ValidationAttribute
         if (Regex.IsMatch(_email, regex))
             return ValidationResult.Success;
 
-        return new ValidationResult(ErrorMessage ?? "Invalid E-mail");
+        return new ValidationResult(ErrorMessage ?? $"This Email: {_email} is not an invalid Email");
     }
 }
