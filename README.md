@@ -1,5 +1,3 @@
-Open-Source Extension Pack for Exception and Fluent Map Validations for .NET
-
 All exception classes are static, using the method ValidationThrow(item) to perform the corresponding validation logic.
 
 Clone Repository:
