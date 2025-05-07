@@ -4,17 +4,20 @@
     <!-- Nome do seu pacote NuGet -->
     <TargetFramework>net6.0</TargetFramework> 
     <PackageId>ValidationsExtension.NET</PackageId>
-    <Version>1.2.1</Version>
+    <Version>1.2.3</Version>
     <Authors>Lucas Lantemam Leite</Authors>
     <PackageDescription>Validações personalizadas para Fluent API e Exceptions</PackageDescription>
     <PackageTags>validation, exception, modelview</PackageTags>
     <RepositoryUrl>https://github.com/LucasLantemamLeite/ValidationsExtension.NET.git</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="README.md" Pack="false" PackagePath="/" />
-    <None Include="License.txt" Pack="false" PackagePath="/" />
+    <None Include="README.md" Pack="true" PackagePath="" />
+    <None Include="LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
