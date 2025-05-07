@@ -5,7 +5,7 @@
   },
   "projects": {
     "B:\\GitHub\\C#\\ValidationsExtension.NET\\ValidationToModelViewNuGet.csproj": {
-      "version": "1.1.0",
+      "version": "1.2.1",
       "restore": {
         "projectUniqueName": "B:\\GitHub\\C#\\ValidationsExtension.NET\\ValidationToModelViewNuGet.csproj",
         "projectName": "ValidationsExtension.NET",

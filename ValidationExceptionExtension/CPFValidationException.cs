@@ -31,29 +31,25 @@ public class CPFValidationException : Exception
         List<char> digits = cpfFormat.ToList();
         char[] digitsChar = digits.ToArray();
 
-        var soma = 0;
-        var iDigits = 0;
+        var sum = 0;
 
         for (int i = 10; i >= 2; i--)
         {
-            soma += (int)Char.GetNumericValue(digitsChar[iDigits]) * i;
-            iDigits++;
+            sum += (int)char.GetNumericValue(digitsChar[10 - i]) * i;
         }
 
-        digitsChar[9] = (soma % 11 == 0 || soma % 11 == 1) ? '0' : (char)(11 - (soma % 11) + '0');
+        digitsChar[9] = (sum % 11 == 0 || sum % 11 == 1) ? '0' : (char)(11 - (sum % 11) + '0');
 
-        soma = 0;
-        iDigits = 0;
+        sum = 0;
 
         for (int i = 11; i >= 2; i--)
         {
-            soma += (int)Char.GetNumericValue(digitsChar[iDigits]) * i;
-            iDigits++;
+            sum += (int)char.GetNumericValue(digitsChar[11 - i]) * i;
         }
 
-        digitsChar[10] = (soma % 11 == 0 || soma % 11 == 1) ? '0' : (char)(11 - (soma % 11) + '0');
+        digitsChar[10] = (sum % 11 == 0 || sum % 11 == 1) ? '0' : (char)(11 - (sum % 11) + '0');
 
         if (string.Join("", digitsChar) != cpfFormat)
-            throw new CPFValidationException($"Error, in the CPF: '{cpf}'. The verification digit is incorrect");
+            throw new CPFValidationException($"Invalid CPF: '{cpf}', the verification digits are incorrect");
     }
 }
