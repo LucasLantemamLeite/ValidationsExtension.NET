@@ -1,15 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- Nome do seu pacote NuGet -->
-    <TargetFramework>net6.0</TargetFramework> 
+  <Title>Validations Extension.NET</Title>
+    <TargetFramework>net8.0</TargetFramework> 
     <PackageId>ValidationsExtension.NET</PackageId>
-    <Version>1.2.3</Version>
+    <Version>1.2.4</Version>
     <Authors>Lucas Lantemam Leite</Authors>
+    <Summary>Validações para Fluent API</Summary>
     <PackageDescription>Validações personalizadas para Fluent API e Exceptions</PackageDescription>
     <PackageTags>validation, exception, modelview</PackageTags>
     <RepositoryUrl>https://github.com/LucasLantemamLeite/ValidationsExtension.NET.git</RepositoryUrl>
+    <Copyright>Copyright © 2025 Lucas Lantemam Leite</Copyright>
+    <PackageProjectUrl>https://github.com/LucasLantemamLeite/ValidationsExtension.NET</PackageProjectUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>
+      - Melhorias de performance
+      - Correção de bug na validação de Email
+    </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
