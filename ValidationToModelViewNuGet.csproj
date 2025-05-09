@@ -4,7 +4,7 @@
   <Title>Validations Extension.NET</Title>
     <TargetFramework>net8.0</TargetFramework> 
     <PackageId>ValidationsExtension.NET</PackageId>
-    <Version>1.2.4</Version>
+    <Version>1.3.0</Version>
     <Authors>Lucas Lantemam Leite</Authors>
     <Summary>Validações para Fluent API</Summary>
     <PackageDescription>Validações personalizadas para Fluent API e Exceptions</PackageDescription>
@@ -15,8 +15,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>
-      - Melhorias de performance
-      - Correção de bug na validação de Email
+      - Performance improvements
+      - Code refactoring to provide better visibility and control over Exceptions and Validation Attributes
+      - New validations: CNPJValidationAttribute, CNPJValidationException, and MinimumAgeException
+      - Class renaming: BirthDateLessThanToday renamed to MinimumAgeAttribute, and BirthDateValidationException renamed to MinimumAgeException
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
