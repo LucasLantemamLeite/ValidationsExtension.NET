@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Validation.ViewModel
 {
     /// <summary>
     /// A custom validation attribute used to validate CPF numbers.
     /// </summary>
-    public class CPFValidation : ValidationAttribute
+    public class CPFValidationAttribute : ValidationAttribute
     {
         /// <summary>
         /// Validates the CPF number to ensure it is correct and follows the CPF rules.
@@ -15,11 +16,23 @@ namespace Validation.ViewModel
         /// <param name="value">The CPF value to be validated.</param>
         /// <param name="validationContext">The context of the validation process.</param>
         /// <returns>A ValidationResult that indicates whether the CPF is valid or not.</returns>
+        /// <remarks>
+        /// This method first checks if the CPF value is null or empty. If it is not null,
+        /// the method uses a regular expression to check if the CPF format is valid.
+        /// It also ensures that the CPF has exactly 11 digits after removing any dots or hyphens.
+        /// Then, it performs a calculation to validate the CPF using the CPF verification digits.
+        /// </remarks>
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             // Check if the value is null or empty
             if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
-                return new ValidationResult(ErrorMessage ?? "The CPF cannot be null or empty");
+                return ValidationResult.Success;
+
+            var cpfRegex = @"^\d{3}(\.)?\d{3}(\.)?\d{3}(\-)?\d{2}$";
+
+            // Check if the value matches the CPF format (with or without punctuation)
+            if (!Regex.IsMatch(value.ToString(), cpfRegex))
+                return new ValidationResult(ErrorMessage ?? $"The CPF '{value}' is in an invalid format. It can optionally include dots (.) and hyphen (-). Please follow the pattern: XXX.XXX.XXX-XX or XXXXXXXXXXX");
 
             // Remove formatting characters (dots and dashes)
             var cpfFormat = value.ToString().Trim().Replace(".", "").Replace("-", "");
@@ -29,33 +42,35 @@ namespace Validation.ViewModel
                 return new ValidationResult(ErrorMessage ?? $"Invalid CPF: '{value}', it must contain exactly 11 digits (excluding punctuation)");
 
             // Convert the CPF string into a list of digits
-            List<char> digits = cpfFormat.ToList();
-            char[] digitsChar = digits.ToArray();
+            List<int> digits = cpfFormat.Select(c => int.Parse(c.ToString())).ToList();
+
+            // Take the first 9 digits to use in the calculation of the verification digits
+            var originalDigits = digits.Take(9).ToList();
 
             var sum = 0;
 
             // Calculate the first verification digit
-            for (int i = 10; i >= 2; i--)
+            for (int i = 0; i < 9; i++)
             {
-                sum += (int)char.GetNumericValue(digitsChar[10 - i]) * i;
+                sum += originalDigits[i] * (10 - i);
             }
 
-            // Calculate and assign the first verification digit
-            digitsChar[9] = (sum % 11 == 0 || sum % 11 == 1) ? '0' : (char)(11 - (sum % 11) + '0');
+            // Add the first verification digit to the list of digits
+            originalDigits.Add((sum % 11 == 0 || sum % 11 == 1) ? 0 : (11 - (sum % 11)));
 
             sum = 0;
 
             // Calculate the second verification digit
-            for (int i = 11; i >= 2; i--)
+            for (int i = 0; i < 10; i++)
             {
-                sum += (int)char.GetNumericValue(digitsChar[11 - i]) * i;
+                sum += originalDigits[i] * (11 - i);
             }
 
-            // Calculate and assign the second verification digit
-            digitsChar[10] = (sum % 11 == 0 || sum % 11 == 1) ? '0' : (char)(11 - (sum % 11) + '0');
+            // Add the second verification digit to the list of digits
+            originalDigits.Add((sum % 11 == 0 || sum % 11 == 1) ? 0 : (11 - (sum % 11)));
 
             // Compare the original CPF with the calculated CPF to verify correctness
-            if (string.Join("", digitsChar) != cpfFormat)
+            if (string.Join("", originalDigits) != cpfFormat)
                 return new ValidationResult(ErrorMessage ?? $"Invalid CPF: '{value}', the verification digits are incorrect");
 
             // Return success if the CPF is valid
