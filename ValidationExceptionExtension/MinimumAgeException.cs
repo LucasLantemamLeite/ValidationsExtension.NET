@@ -36,12 +36,12 @@ namespace Validation.ExceptonExtension
 
             // Check if birth date is a future date
             if (birthDate.Value > DateTime.Now)
-                throw new MinimumAgeException($"Birth date cannot be in the future. Provided birth date: {birthDate.Value.ToShortDateString()}");
+                throw new MinimumAgeException($"Birth date cannot be in the future. Provided birth date: '{birthDate.Value.ToShortDateString()}'");
 
             // Check if the user is younger than the minimum required age
             // birthDate + minimumAge in years > today → means user hasn't reached the required age yet
             if (birthDate.Value.AddYears(minimumAge) > DateTime.Today)
-                throw new MinimumAgeException($"User must be at least {minimumAge} years old.");
+                throw new MinimumAgeException($"User must be at least '{minimumAge}' years old.");
         }
     }
 }

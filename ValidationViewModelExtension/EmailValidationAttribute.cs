@@ -21,7 +21,7 @@ namespace Validation.ViewModel
         {
             // Check if the email is null or empty
             if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
-                return new ValidationResult(ErrorMessage ?? "Email cannot be null or empty");
+                return ValidationResult.Success;
 
             var _email = value.ToString().Trim();
 
@@ -33,7 +33,7 @@ namespace Validation.ViewModel
                 return ValidationResult.Success;
 
             // Return error message if the email format is invalid
-            return new ValidationResult(ErrorMessage ?? "Invalid email format");
+            return new ValidationResult(ErrorMessage ?? $"'{value}' is an invalid email format");
         }
     }
 }

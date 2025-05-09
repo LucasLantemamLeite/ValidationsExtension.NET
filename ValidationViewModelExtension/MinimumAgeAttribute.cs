@@ -37,21 +37,21 @@ namespace Validation.ViewModel
 
             // Ensure the MinimumAge is not less than zero
             if (MinimumAge < 0)
-                return new ValidationResult(ErrorMessage ?? $"The MinimumAge cannot be less than zero. Actual value is: {MinimumAge}.");
+                return new ValidationResult(ErrorMessage ?? $"The MinimumAge cannot be less than zero. Actual value is: '{MinimumAge}'.");
 
             // Check if the provided value is a valid DateTime object
             if (value is DateTime BirthDate)
             {
                 // Validate that the user is old enough and the birth date is not in the future
                 if (BirthDate.AddYears(MinimumAge) > DateTime.Today)
-                    return new ValidationResult(ErrorMessage ?? $"User must be at least {MinimumAge} years old.");
+                    return new ValidationResult(ErrorMessage ?? $"User must be at least '{MinimumAge}' years old.");
 
                 // Return success if the birth date is valid and the user meets the minimum age requirement
                 return ValidationResult.Success;
             }
 
             // If the value is not a valid DateTime, return an error
-            return new ValidationResult(ErrorMessage ?? "BirthDate is not a valid DateTime.");
+            return new ValidationResult(ErrorMessage ?? $"'{value}' is not a valid DateTime.");
         }
     }
 }
