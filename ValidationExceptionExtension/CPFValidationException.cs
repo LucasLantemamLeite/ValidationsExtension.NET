@@ -27,14 +27,11 @@ namespace Validation.ExceptonExtension
 
             // Check if the value matches the CPF format (with or without punctuation)
             if (!Regex.IsMatch(cpf, cpfRegex))
-                throw new CPFValidationException($"The CPF '{cpf}' is in an invalid format. It can optionally include dots (.) and hyphen (-). Please follow the pattern: XXX.XXX.XXX-XX or XXXXXXXXXXX");
+                throw new CPFValidationException($"The CPF '{cpf}' is in an invalid format or does not have exactly 11 digits. It can optionally include dots (.) and hyphen (-). Please follow the pattern: XXX.XXX.XXX-XX or XXXXXXXXXXX.");
+
 
             // Remove formatting characters (dots and dashes)
             var cpfFormat = cpf.Trim().Replace(".", "").Replace("-", "");
-
-            // Check if the CPF length is exactly 11 digits
-            if (cpfFormat.Length != 11)
-                throw new CPFValidationException($"Invalid CPF: '{cpf}', it must contain exactly 11 digits (excluding punctuation)");
 
             // Convert the CPF string into a list of digits
             List<int> digits = cpfFormat.Select(c => int.Parse(c.ToString())).ToList();

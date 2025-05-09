@@ -32,14 +32,10 @@ namespace Validation.ViewModel
 
             // Check if the value matches the CPF format (with or without punctuation)
             if (!Regex.IsMatch(value.ToString(), cpfRegex))
-                return new ValidationResult(ErrorMessage ?? $"The CPF '{value}' is in an invalid format. It can optionally include dots (.) and hyphen (-). Please follow the pattern: XXX.XXX.XXX-XX or XXXXXXXXXXX");
+                return new ValidationResult(ErrorMessage ?? $"The CPF '{value}' is in an invalid format or does not have exactly 11 digits. It can optionally include dots (.) and hyphen (-). Please follow the pattern: XXX.XXX.XXX-XX or XXXXXXXXXXX.");
 
             // Remove formatting characters (dots and dashes)
             var cpfFormat = value.ToString().Trim().Replace(".", "").Replace("-", "");
-
-            // Check if the CPF length is exactly 11 digits
-            if (cpfFormat.Length != 11)
-                return new ValidationResult(ErrorMessage ?? $"Invalid CPF: '{value}', it must contain exactly 11 digits (excluding punctuation)");
 
             // Convert the CPF string into a list of digits
             List<int> digits = cpfFormat.Select(c => int.Parse(c.ToString())).ToList();
