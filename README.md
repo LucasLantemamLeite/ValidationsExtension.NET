@@ -4,10 +4,10 @@
 
 ## ✨ Features
 
+- ✅ **CNPJ Validation**: Validate Brazilian CNPJ numbers.
 - ✅ **CPF Validation**: Validate Brazilian CPF numbers.
 - ✅ **Email Validation**: Check if an email address is in a valid format.
-- ✅ **Birthdate Validation**: Ensure a user has the minimum age and a valid birthdate.
-- ✅ **Phone Validation**: (coming soon or already added)
+- ✅ **Minimum Age Validation**: Ensure a user is at least a certain age based on their birthdate.
 
 ## 📦 Installation
 

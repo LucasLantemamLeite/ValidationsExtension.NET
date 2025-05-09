@@ -26,7 +26,7 @@ public class EmailAddressDomain : ValidationAttribute
         var _email = value.ToString().Trim();
 
         // Regular expression for validating email format
-        var regex = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        var regex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$";
 
         // Check if the email matches the regular expression pattern
         if (Regex.IsMatch(_email, regex))

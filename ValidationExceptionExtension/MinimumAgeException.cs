@@ -40,7 +40,7 @@ public class MinimumAgeException : Exception
 
         // Check if the user is younger than the minimum required age
         // birthDate + minimumAge in years > today → means user hasn't reached the required age yet
-        if (birthDate.Value.AddYears(minimumAge) > DateTime.Today)
+        if (minimumAge > 0 && birthDate.Value.AddYears(minimumAge) > DateTime.Today)
             throw new MinimumAgeException($"User must be at least '{minimumAge}' years old.");
     }
 }

@@ -42,7 +42,7 @@ public class MinimumAgeAttribute : ValidationAttribute
         if (value is DateTime BirthDate)
         {
             // Validate that the user is old enough and the birth date is not in the future
-            if (BirthDate.AddYears(MinimumAge) > DateTime.Today)
+            if (MinimumAge > 0 && BirthDate.AddYears(MinimumAge) > DateTime.Today)
                 return new ValidationResult(ErrorMessage ?? $"User must be at least '{MinimumAge}' years old.");
 
             // Return success if the birth date is valid and the user meets the minimum age requirement

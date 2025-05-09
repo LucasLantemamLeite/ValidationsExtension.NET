@@ -15,8 +15,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>
-      - Melhorias de performance
-      - Correção de bug na validação de Email
+      - Performance improvements
+      - Code refactoring to provide better visibility and control over Exceptions and Validation Attributes
+      - New validations: CNPJValidationAttribute, CNPJValidationException, and MinimumAgeException
+      - Class renaming: BirthDateLessThanToday renamed to MinimumAgeAttribute, and BirthDateValidationException renamed to MinimumAgeException
     </PackageReleaseNotes>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
