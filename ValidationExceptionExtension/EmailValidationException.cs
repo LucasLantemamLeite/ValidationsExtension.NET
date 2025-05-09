@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Validation.ExceptonExtension;
+namespace Validation.ExceptionExtension;
 
 /// <summary>
 /// A class used to validate emails containing an '@' and a 'domain', with or without a top-level domain (e.g., ".br")
@@ -27,6 +27,6 @@ public class EmailAddresDomainException : Exception
         var regex = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
         if (!Regex.IsMatch(email, regex))
-            throw new EmailAddresDomainException($"'{email}' is not a valid email");
+            throw new EmailAddresDomainException($"'{email} is not a valid email");
     }
 }
