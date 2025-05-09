@@ -40,7 +40,10 @@ namespace Validation.ViewModel
             // Convert the CNPJ string into a list of digits
             List<int> digits = cnpjFormat.Select(c => int.Parse(c.ToString())).ToList();
 
-            // Take the first 12 digits to use in the calculation of the verification digits
+            // Array of multipliers used to calculate the verification digits
+            var multArray = new[] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+
+            // Take the first 12 digits to calculate the first verification digit
             var originalDigits = digits.Take(12).ToList();
 
             var sum = 0;
@@ -48,7 +51,7 @@ namespace Validation.ViewModel
             // Calculate the first verification digit
             for (int i = 0; i < 12; i++)
             {
-                sum += originalDigits[i] * (i < 4 ? 6 - i : 5 - (i - 4));
+                sum += originalDigits[i] * multArray[i + 1]; // Shift by +1 to align with the multiplier array
             }
 
             // Add the first verification digit to the list
@@ -59,13 +62,13 @@ namespace Validation.ViewModel
             // Calculate the second verification digit
             for (int i = 0; i < 13; i++)
             {
-                sum += originalDigits[i] * (i < 4 ? 6 - i : 5 - (i - 4));
+                sum += originalDigits[i] * multArray[i];
             }
 
             // Add the second verification digit to the list
             originalDigits.Add((sum % 11 == 0 || sum % 11 == 1) ? 0 : (11 - (sum % 11)));
 
-            // Compare the original CNPJ with the calculated CNPJ to verify correctness
+            // Compare the calculated CNPJ with the provided CNPJ
             if (string.Join("", originalDigits) != cnpjFormat)
                 return new ValidationResult(ErrorMessage ?? $"Invalid CNPJ: '{value}', the verification digits are incorrect");
 
