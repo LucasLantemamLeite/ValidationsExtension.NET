@@ -56,6 +56,6 @@ public class MiniumAgeValidation
         {
             MinimumAgeException.ValidationThrow(data, minimumAge);
         });
-        Assert.AreEqual($"Minimum age cannot be negative. Actualy MinimunAge is: {minimumAge}", ex.Message);
+        Assert.AreEqual($"Minimum age cannot be negative. Actually, minimum age is: {minimumAge}", ex.Message);
     }
 }

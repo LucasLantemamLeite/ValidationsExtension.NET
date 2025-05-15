@@ -35,7 +35,7 @@ public class MinimumAgeException : Exception
             return;
 
         if (minimumAge < 0)
-            throw new MinimumAgeException($"Minimum age cannot be negative. Actualy MinimunAge is: {minimumAge}");
+            throw new MinimumAgeException($"Minimum age cannot be negative. Actually, minimum age is: {minimumAge}");
 
         // Check if birth date is a future date
         if (birthDate.Value > DateTime.Now)
