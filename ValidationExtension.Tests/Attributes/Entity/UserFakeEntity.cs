@@ -6,6 +6,7 @@ public class UserFakeEntity
     public string? CNPJ { get; set; }
     [CPFValidation]
     public string? CPF { get; set; }
+    [EmailAddressDomain]
     public string? Email { get; set; }
     public DateTime? BirthDate { get; set; }
 
