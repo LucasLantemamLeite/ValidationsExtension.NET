@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationToModelViewNuGet", "Code\ValidationToModelViewNuGet.csproj", "{5FC6C410-DD8F-4EC5-8B3D-A3205495B6EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtension.Tests", "ValidationExtension.Tests\ValidationExtension.Tests.csproj", "{018E9414-6F9D-4D8B-B0BC-3A6974B10DF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FC6C410-DD8F-4EC5-8B3D-A3205495B6EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC6C410-DD8F-4EC5-8B3D-A3205495B6EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC6C410-DD8F-4EC5-8B3D-A3205495B6EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC6C410-DD8F-4EC5-8B3D-A3205495B6EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018E9414-6F9D-4D8B-B0BC-3A6974B10DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018E9414-6F9D-4D8B-B0BC-3A6974B10DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018E9414-6F9D-4D8B-B0BC-3A6974B10DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018E9414-6F9D-4D8B-B0BC-3A6974B10DF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
