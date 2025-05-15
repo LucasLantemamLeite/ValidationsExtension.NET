@@ -25,7 +25,7 @@ public class CPFValidationAttribute : ValidationAttribute
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
         // Check if the value is null or empty
-        if (string.IsNullOrEmpty(value.ToString()))
+        if (value == null || string.IsNullOrEmpty(value.ToString()))
             return ValidationResult.Success;
 
         var cpfRegex = @"^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$";

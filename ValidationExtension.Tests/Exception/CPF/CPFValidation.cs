@@ -46,7 +46,8 @@ public class CPFValidation
     }
 
     [TestMethod]
-    public void CPF_With_Extra_Punctuation_Should_Exception()
+    [TestCategory("Exception")]
+    public void CPF_With_Extra_Punctuation_Exception()
     {
         var CPF = "*/867.253.580-47)*+*.";
         var ex = Assert.ThrowsException<CPFValidationException>(() =>
@@ -58,7 +59,7 @@ public class CPFValidation
 
     [TestMethod]
     [TestCategory("Exception")]
-    public void CPF_CanBeEmpty_Exception()
+    public void CPF_Can_Be_Empty_Exception()
     {
         var CPF = "";
         CPFValidationException.ValidationThrow(CPF);
@@ -66,7 +67,7 @@ public class CPFValidation
 
     [TestMethod]
     [TestCategory("Exception")]
-    public void CPF_CanBeNull_Exception()
+    public void CPF_Can_Be_Null_Exception()
     {
         string? CPF = null;
         CPFValidationException.ValidationThrow(CPF);
@@ -74,7 +75,7 @@ public class CPFValidation
 
     [TestMethod]
     [TestCategory("Exception")]
-    public void CPF_Isvalid_Digit_Verify_Exception()
+    public void CPF_Is_Valid_Digit_Verify_Exception()
     {
         var CPF = "86725358047";
         CPFValidationException.ValidationThrow(CPF);
@@ -82,7 +83,7 @@ public class CPFValidation
 
     [TestMethod]
     [TestCategory("Exception")]
-    public void CPF_IsInvalid_Digit_Verify_Exception()
+    public void CPF_Is_Invalid_Digit_Verify_Exception()
     {
         var CPF = "86725358046";
         var ex = Assert.ThrowsException<CPFValidationException>(() =>
