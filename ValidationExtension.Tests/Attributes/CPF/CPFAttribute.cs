@@ -74,7 +74,6 @@ public class CPFAttribute
     public void CPF_Can_Be_Empty_Attribute()
     {
         var user = new UserFakeEntity { CPF = "" };
-
         Assert.IsTrue(ValidateUser(user, out var results));
         Assert.AreEqual(0, results.Count);
     }
