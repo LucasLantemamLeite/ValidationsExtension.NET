@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Validation.ExceptionExtension;
 
-namespace ValidationExtension.Tests;
+namespace Validation.ExceptionExtension.Test;
 
 [TestClass]
 public class EmailValidation
@@ -63,6 +62,14 @@ public class EmailValidation
     public void Email_Can_Be_Empty_Exception()
     {
         var email = "";
+        EmailAddressDomainException.ValidationThrow(email);
+    }
+
+    [TestMethod]
+    [TestCategory("Exception")]
+    public void Email_Can_Be_Null_Exception()
+    {
+        string? email = null;
         EmailAddressDomainException.ValidationThrow(email);
     }
 }

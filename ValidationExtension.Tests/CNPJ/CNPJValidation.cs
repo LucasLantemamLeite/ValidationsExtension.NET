@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Validation.ExceptionExtension;
 
-namespace ValidationExtension.Tests;
+namespace Validation.ExceptionExtension.Test;
 
 [TestClass]
 public class CNPJValidation

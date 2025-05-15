@@ -26,6 +26,9 @@ public class EmailAddressDomainException : Exception
     {
         var regex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$";
 
+        if (string.IsNullOrEmpty(email))
+            return;
+
         if (!Regex.IsMatch(email, regex))
             throw new EmailAddressDomainException($"'{email} is not a valid email");
     }
