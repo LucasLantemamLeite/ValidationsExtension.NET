@@ -204,14 +204,12 @@ public class ValidationTest
     [TestCategory("Exception")]
     public void Email_Regex_NotMatch_Without_Domain_Exception()
     {
-        var email = "emaildetestegmail.com.br"; // Email without Domain
+        var email = "emaildetestegmail@"; // Email without Domain
         var ex = Assert.ThrowsException<EmailAddressDomainException>(() =>
         {
             EmailAddressDomainException.ValidationThrow(email);
         });
         Assert.AreEqual($"'{email} is not a valid email", ex.Message);
     }
-
-
 
 }
