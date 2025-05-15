@@ -180,4 +180,11 @@ public class ValidationTest
         Assert.AreEqual($"Invalid CNPJ: '{CNPJ}', the verification digits are incorrect", ex.Message);
     }
 
+    [TestMethod]
+    public void Email_Regex_Match_Exception()
+    {
+        var email = "emaildeteste@gmail.com.br";
+        EmailAddresDomainException.ValidationThrow(email);
+    }
+
 }
