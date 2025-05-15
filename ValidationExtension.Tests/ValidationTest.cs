@@ -185,7 +185,7 @@ public class ValidationTest
     public void Email_Regex_Match_Exception()
     {
         var email = "emaildeteste@gmail.com.br";
-        EmailAddresDomainException.ValidationThrow(email);
+        EmailAddressDomainException.ValidationThrow(email);
     }
 
     [TestMethod]
@@ -193,9 +193,9 @@ public class ValidationTest
     public void Email_Regex_NotMatch_Exception()
     {
         var email = "emaildetestegmail.com.br"; // Email without "@"
-        var ex = Assert.ThrowsException<EmailAddresDomainException>(() =>
+        var ex = Assert.ThrowsException<EmailAddressDomainException>(() =>
         {
-            EmailAddresDomainException.ValidationThrow(email);
+            EmailAddressDomainException.ValidationThrow(email);
         });
         Assert.AreEqual($"'{email} is not a valid email", ex.Message);
     }
@@ -205,9 +205,9 @@ public class ValidationTest
     public void Email_Regex_NotMatch_Without_Domain_Exception()
     {
         var email = "emaildetestegmail.com.br"; // Email without Domain
-        var ex = Assert.ThrowsException<EmailAddresDomainException>(() =>
+        var ex = Assert.ThrowsException<EmailAddressDomainException>(() =>
         {
-            EmailAddresDomainException.ValidationThrow(email);
+            EmailAddressDomainException.ValidationThrow(email);
         });
         Assert.AreEqual($"'{email} is not a valid email", ex.Message);
     }
