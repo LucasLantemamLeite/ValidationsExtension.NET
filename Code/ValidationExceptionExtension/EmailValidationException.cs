@@ -31,5 +31,7 @@ public class EmailAddressDomainException : Exception
 
         if (!Regex.IsMatch(email, regex))
             throw new EmailAddressDomainException($"'{email} is not a valid email");
+
+        return;
     }
 }

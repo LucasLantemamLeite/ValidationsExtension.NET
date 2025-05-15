@@ -70,6 +70,8 @@ namespace Validation.ExceptionExtension
             // Compare the calculated CNPJ with the provided CNPJ (including verification digits)
             if (string.Join("", originalDigits) != cnpjFormat)
                 throw new CNPJValidationException($"Invalid CNPJ: '{cpnj}', the verification digits are incorrect");
+
+            return;
         }
     }
 }

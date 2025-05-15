@@ -45,6 +45,8 @@ public class MinimumAgeException : Exception
         // birthDate + minimumAge in years > today → means user hasn't reached the required age yet
         if (minimumAge > 0 && birthDate.Value.AddYears(minimumAge) > DateTime.Today)
             throw new MinimumAgeException($"User must be at least '{minimumAge}' years old.");
+
+        return;
     }
 }
 
