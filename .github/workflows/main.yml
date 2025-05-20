@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      DOTNET_CONFIGURATION: Release
 
     steps:
       - uses: actions/checkout@v4
@@ -21,13 +23,13 @@ jobs:
         run: dotnet restore
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration ${{ env.DOTNET_CONFIGURATION }} --no-restore
 
       - name: Run tests
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --configuration ${{ env.DOTNET_CONFIGURATION }} --no-build --verbosity normal
 
       - name: Create the Package
-        run: dotnet pack --configuration Release --no-build --output ./nupkg
+        run: dotnet pack --configuration ${{ env.DOTNET_CONFIGURATION }} --no-build --output ./nupkg
 
       - name: Publish to NuGet
         run: dotnet nuget push "./nupkg/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
