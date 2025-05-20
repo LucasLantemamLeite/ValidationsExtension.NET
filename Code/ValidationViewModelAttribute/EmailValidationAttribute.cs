@@ -36,4 +36,3 @@ public class EmailAddressDomain : ValidationAttribute
         return new ValidationResult(ErrorMessage ?? $"'{value}' is an invalid email format");
     }
 }
-

@@ -23,12 +23,14 @@ public class CPFValidationException : Exception
     /// <exception cref="CPFValidationException">Thrown if the CPF is invalid or has incorrect verification digits.</exception>
     public static void ValidationThrow(string cpf)
     {
-        var cpfRegex = @"^\d{3}(\.)?\d{3}(\.)?\d{3}(\-)?\d{2}$";
+        var cpfRegex = @"^\d{11}$|^\d{3}\.\d{3}\.\d{3}\-\d{2}$";
+
+        if (string.IsNullOrEmpty(cpf))
+            return;
 
         // Check if the value matches the CPF format (with or without punctuation)
         if (!Regex.IsMatch(cpf, cpfRegex))
             throw new CPFValidationException($"The CPF '{cpf}' is in an invalid format or does not have exactly 11 digits. It can optionally include dots (.) and hyphen (-). Please follow the pattern: XXX.XXX.XXX-XX or XXXXXXXXXXX.");
-
 
         // Remove formatting characters (dots and dashes)
         var cpfFormat = cpf.Trim().Replace(".", "").Replace("-", "");
@@ -64,5 +66,7 @@ public class CPFValidationException : Exception
         // Compare the calculated CPF digits with the original CPF
         if (string.Join("", originalDigits) != cpfFormat)
             throw new CPFValidationException($"Invalid CPF: '{cpf}', the verification digits are incorrect");
+
+        return;
     }
 }

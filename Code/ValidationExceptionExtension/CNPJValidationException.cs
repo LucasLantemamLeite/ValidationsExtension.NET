@@ -26,6 +26,9 @@ namespace Validation.ExceptionExtension
         {
             var cnpjRegex = @"^\d{2}\.?\d{3}\.?\d{3}\/?\d{4}\-?\d{2}$";
 
+            if (string.IsNullOrEmpty(cpnj))
+                return;
+
             // Check the CNPJ format using regex
             if (!Regex.IsMatch(cpnj, cnpjRegex))
                 throw new CNPJValidationException($"The CNPJ '{cpnj}' is in an invalid format or does not have exactly 14 digits. It can optionally include dots (.), slash (/) and hyphen (-). Please follow the pattern: XX.XXX.XXX/XXXX-XX or XXXXXXXXXXXXXX.");
@@ -67,6 +70,8 @@ namespace Validation.ExceptionExtension
             // Compare the calculated CNPJ with the provided CNPJ (including verification digits)
             if (string.Join("", originalDigits) != cnpjFormat)
                 throw new CNPJValidationException($"Invalid CNPJ: '{cpnj}', the verification digits are incorrect");
+
+            return;
         }
     }
 }
